@@ -31,7 +31,7 @@ $nama_barang=$_POST['nama_mahasiswa'];
 $jumlah=$_POST['topik'];
 $hargga_barang=$_POST['judul'];
 $sql="insert into barang (NIM,nama_mahasiswa,topik,judul)
-values ('$kode_barang','$nama_barang','$jumlah','$hargga_barang')";
+values ('$NIM','$nama_mahasiswa','$topik','$judul')";
 if(mysql_query($sql))
 {
 echo "OK_lanjutkan";
