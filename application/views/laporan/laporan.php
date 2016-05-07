@@ -12,9 +12,9 @@ and open the template in the editor.
     <body>
         <form id="laporanDropdown" method="post">
             <select name="laporan">
-                <option value="1">Performa Dosen Pembimbing</option>
-                <option value="2">KBK</option>
-                <option value="3">Skripsi Khusus</option>
+                <option value="1">Tanggungan Dosen Pembimbing</option>
+                <option value="2">Minat KBK</option>
+                <option value="3">Status Skripsi</option>
             </select> 
             <input type="submit" name="Submit" value="Submit">
         </form>
@@ -29,13 +29,13 @@ and open the template in the editor.
                 
                 // Then I should see laporan_data
                 switch($_POST['laporan']){
-                    case 1 : echo "Tabel dan Grafik : Performa Dosen Pembimbing";
+                    case 1 : echo "Tabel dan Grafik : Tanggungan Dosen Pembimbing";
                         showLaporan($_POST['laporan'],$dosen,$ydata);
                         break;
-                    case 2 : echo "Tabel dan Grafik : KBK";
+                    case 2 : echo "Tabel dan Grafik : Minat KBK";
                         showLaporan($_POST['laporan'],$dosen,$ydata);
                         break;
-                    case 3 : echo "Tabel dan Grafik : Skripsi Khusus";
+                    case 3 : echo "Tabel dan Grafik : Status Skripsi";
                         showLaporan($_POST['laporan'],$dosen,$ydata);
                         break;
                 }
