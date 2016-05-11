@@ -1,5 +1,5 @@
 <?php
-   class Bimbingan {
+   class Bimbingan extends CI_Model{
       /* Member variables */
       var $idSkripsi;
       var $idKBK;
@@ -9,6 +9,10 @@
       var $tglProposal;
       var $tglSkripsi;
       
+      
+      function __construct() {
+          parent::__construct();
+      }
       /* Member functions */
       
       function getIdSkripsi() {

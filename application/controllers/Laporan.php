@@ -2,7 +2,14 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Laporan extends CI_Controller {
-
+        
+        function __construct(){
+            parent::__construct();
+            $this->load->model('Dosen');
+            $this->load->model('Membimbing');
+            $this->load->library('table');
+        }
+        
 	/**
 	 * Index Page for this controller.
 	 *
@@ -18,10 +25,50 @@ class Laporan extends CI_Controller {
 	 * map to /index.php/welcome/<method_name>
 	 * @see https://codeigniter.com/user_guide/general/urls.html
 	 */
-	public function index()
-	{
-//            $this->load->view('header');
-            $this->load->view('laporan/laporan');
-//            $this->load->view('footer');
+	public function index(){
+            $data      = array(
+                            'dosen' => $this->Dosen->getAllDosen()
+                           );
+//            $data['Dosen'] = $this->Dosen->getAllDosen();
+            
+            $this->load->view('head');
+            $this->load->view('laporan/laporan', $data);
+            $this->load->view('foot');
+            
 	}
+        
+//        function getData(){
+//            $this->arrayDosen = $this->db->query('SELECT * FROM `dosen`');
+//            while($row = mysql_fetch_array($this->arrayDosen, MYSQL_NUM)){    
+//                echo "ID KARYAWAN :{$row[0]}  <br> ".
+//                    "NAMA KARYAWAN : {$row[1]} <br> ".
+//                    "GAJI KARYAWAN : {$row[2]} <br> ".
+//                    "--------------------------------<br>";
+//            }
+//        }
+        
+        function view($page = 'laporan'){
+            
+//            // When I navigate to any_laporan
+//            if(isset($_POST['laporan'])) {
+//            
+//                $arrayDosen = array();
+//                $ydata = array();
+//                
+//                // Then I should see laporan_data
+//                switch($_POST['laporan']){
+//                    case 1 : echo "Tabel dan Grafik : Performa Dosen Pembimbing";
+//                        $this->getData();
+//                        break;
+//                    case 2 : echo "Tabel dan Grafik : KBK";
+//                        showLaporan($_POST['laporan'],$dosen,$ydata);
+//                        break;
+//                    case 3 : echo "Tabel dan Grafik : Skripsi Khusus";
+//                        showLaporan($_POST['laporan'],$dosen,$ydata);
+//                        break;
+//                }
+//                
+//            }
+            
+        }        
 }

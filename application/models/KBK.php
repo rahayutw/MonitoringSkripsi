@@ -1,10 +1,15 @@
 <?php
-   class KBK {
+   class KBK extends CI_Model{
       /* Member variables */
       var $idKBK;
       var $namaKBK;
       var $NIK;
       
+      function __construct() {
+          parent::__construct();
+      }
+
+
       /* Member functions */
       
       function getIdKBK() {

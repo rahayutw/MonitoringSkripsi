@@ -1,9 +1,13 @@
 <?php
-   class Jabatan {
+   class Jabatan extends CI_Model{
       /* Member variables */
       var $idJabatan;
       var $namaJabatan;
       var $NIK;
+      
+      function __construct() {
+          parent::__construct();
+      }
       
       /* Member functions */
       

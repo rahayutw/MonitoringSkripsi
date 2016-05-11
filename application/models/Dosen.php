@@ -1,5 +1,5 @@
 <?php
-   class Dosen {
+   class Dosen extends CI_Model {
       /* Member variables */
       var $nik;
       var $nama;
@@ -9,6 +9,10 @@
       var $telepon;
       var $email;
       var $password;
+      
+      function __construct() {
+          parent::__construct();
+      }
       
       /* Member functions */
       
@@ -74,6 +78,10 @@
 
       function setPassword($password) {
           $this->password = $password;
+      }
+      
+      function getAllDosen(){
+          return $this->db->query("SELECT * FROM `dosen`");
       }
 
 

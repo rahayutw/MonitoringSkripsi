@@ -1,9 +1,12 @@
 <?php
-   class KBK {
+   class KBK extends CI_Model{
       /* Member variables */
       var $tahunAjar;
       var $kuota;
       
+      function __construct() {
+          parent::__construct();
+      }
       /* Member functions */
       
       function getTahunAjar() {

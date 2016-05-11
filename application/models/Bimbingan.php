@@ -1,11 +1,16 @@
 <?php
-   class Dosen {
+   class Bimbingan extends CI_Model{
+       
       /* Member variables */
       var $idSkripsi;
       var $NIK;
       var $subjek;
       var $jenis;
       var $persetujuan;
+      
+      function __construct() {
+          parent::__construct();
+      }
       
       /* Member functions */
       

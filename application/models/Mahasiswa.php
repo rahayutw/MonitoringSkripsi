@@ -11,7 +11,7 @@
  *
  * @author IvenM
  */
-class Mahasiswa {
+class Mahasiswa extends CI_Model{
     /* Member variables */
       var $nim;
       var $nama;
@@ -20,6 +20,9 @@ class Mahasiswa {
       var $telepon;
       var $email;
       
+      function __construct() {
+          parent::__construct();
+      }
       /* Member functions */
       
       function getNim() {

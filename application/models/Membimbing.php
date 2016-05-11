@@ -11,13 +11,17 @@
  *
  * @author IvenM
  */
-class Membimbing {
+class Membimbing extends CI_Model{
     /* Member variables */
       var $idSkripsi;
       var $nik;
       var $subjek;
       var $jenis;
       var $persetujuan;
+      
+      function __construct() {
+          parent::__construct();
+      }
       
       /* Member functions */
       function getIdSkripsi() {
@@ -60,5 +64,8 @@ class Membimbing {
           $this->persetujuan = $persetujuan;
       }
 
-
+      function getAllMembimbing(){
+          return $this->db->query("SELECT * FROM `membimbing`");
+      }
+      
 }
